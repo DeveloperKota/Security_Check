@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Security;
 
 class SendTestMail extends Mailable
 {
@@ -28,8 +29,11 @@ class SendTestMail extends Mailable
      */
     public function build()
     {
+        //$score = Security::latest()->first()->score;
+        
+        
         return $this->view('emails.test')
-                ->from('satou-gcv@yamanashi-ken.ac.jp','Test')
-                ->subject('This is a test mail');
+                ->from('photokotasato020@gmail.com','Test')
+                ->subject("今回のセキュリティチェックの結果");
     }
 }

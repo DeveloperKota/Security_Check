@@ -18,8 +18,6 @@ class CreateSecuritiesTable extends Migration
             $table->string('email')->nullable();
             $table->string('company_name');
             $table->string('name')->nullable();
-            $table->string('content')->nullable();
-            $table->boolean('check')->nullable();
             $table->integer('score');
             $table->timestamps();
         });
