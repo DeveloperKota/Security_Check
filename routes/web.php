@@ -20,13 +20,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/form_first', 'FormController@form_first');
+Route::get('/form/first', 'FormController@form_first');
 
-Route::post('/form_second', 'FormController@form_second');
+Route::post('/form/second', 'FormController@form_second');
 
-Route::post('/form_third', 'FormController@form_third');
+Route::post('/form/third', 'FormController@form_third');
 
-Route::post('/form_forth', 'FormController@form_forth');
+Route::post('/form/forth', 'FormController@form_forth');
 
-Route::get('/mail', 'MailSendController@send');
+Route::get('/form/result', 'FormController@form_result');
+
 

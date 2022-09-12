@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <a href="/form_first" class="btn btn-danger">アンケートに回答する</a>
+                    <a href="/form/first" class="btn btn-danger">アンケートに回答する</a>
                 </div>
             </div>
         </div>

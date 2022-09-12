@@ -9,7 +9,7 @@
                 <div class="card-header">セキュリティチェックリスト</div>
 
                 <div class="card-body">
-                    <form action="/form_second" method="post">
+                    <form action="/form/second" method="post">
                        @csrf
                     <div class="form-group">
                         <div class="input">

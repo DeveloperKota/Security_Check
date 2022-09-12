@@ -23,7 +23,7 @@
                     @endfor
                     </table>--}}
                     <p></p>
-                   <a href ="https://033ad2130ba046b1aa06125929a40269.vfs.cloud9.us-east-1.amazonaws.com/">メールを受け取る</a>
+                   <a href ="result">結果を詳しく見る</a>
                 </div>
             </div>
         </div>

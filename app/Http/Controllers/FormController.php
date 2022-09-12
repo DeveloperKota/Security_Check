@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Security;
+use App\Mail\SendTestMail;
+use Mail;
 
 class FormController extends Controller
 {
@@ -43,8 +45,6 @@ class FormController extends Controller
     }
     public function  form_forth(Request $request) {
         
-        dd($request);
-        
         $checkbox_3 = $request->only(['question_19', 'question_20', 'question_21','question_22','question_23','question_24',
         'question_25']);
 
@@ -60,9 +60,21 @@ class FormController extends Controller
         
         $security = \App\Models\Security::create(['score' => $array_count_3,
         'name' => $user_name,'company_name' => $company_name,'email' => $user_email]);
-            
+        
+        $user_email = Auth::user()->email;
+
+		$to = [
+	    	[
+	        	'email' => $user_email, 
+	        	'name' => 'Test',
+	    	]
+		];
+        
+		Mail::to($to)->send(new SendTestMail());
+       
         return view('form/form_forth',compact(['user_name','array_count_3']));
     }
-    
-    
+    public function form_result(){
+        return view('form/result');
+    }
 }
