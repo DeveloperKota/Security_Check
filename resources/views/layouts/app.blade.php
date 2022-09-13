@@ -19,8 +19,16 @@
     <!-- Styles -->
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
     <style>
+        .row justify-content-center.register {
+            border-bottom: 1px bold black;
+            text-decoration: none;
+        }
+        
         .bg-white {
             background-color: #d71618 !important;
+        }
+        .dropdown-toggle::after {
+            display: none;
         }
         .navbar-brand {
             color: white !important;
@@ -69,7 +77,102 @@
         .card-body a:hover {
             text-decoration: none;
         }
-        
+             body {
+                background-color: #fff;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+            h1 {
+               background-color: #d71618; 
+               padding-top: 10px;
+               padding-bottom: 10px;
+               padding-left:30px;
+               height: 50px;
+               margin: 0;
+            }
+
+            .flex-center position-ref full-height h1{
+                background-color:   #d71618; 
+            }
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 30px;
+                top: 21px;
+            }
+
+            .top-right a{
+                color: #fff;
+            }
+            
+            .content {
+                text-align: center;
+            }
+            
+            .content {
+                
+            }
+
+            .content img {
+                margin-bottom: 100px;
+            }
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #fff;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 0px;
+                background-color: #d71618;
+            }
+            
+            .security {
+                width:300px;
+                height:40px;
+                line-height:40px;
+            }
+            .security a{
+                display:block;
+                height:100%;
+                height:100%;
+                text-decoration: none;
+                background-color: #d71618;
+                text-align:center;
+                color:#fff;
+                font-size:20px;
+                font-weight:bold;
+                border-radius:50px;
+                box-shadow:0px 0px 0px 4px #fff ;
+                transition: all 0.5s ease;
+            }
+            
+            .security a:hover {
+                background-color: #d71618;
+            }
     </style>
 </head>
 <body>
@@ -94,30 +197,18 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                <a class="nav-link" href="{{ route('login') }}">ログイン</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                    <a class="nav-link" href="{{ route('register') }}">会員登録</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/logout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    ログアウト 
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
                             </li>
                         @endguest
                     </ul>

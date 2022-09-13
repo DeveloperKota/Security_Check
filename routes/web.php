@@ -18,16 +18,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('auth/logout', 'Auth\AuthController@logout')->name('logout');
 
-Route::get('/form/first', 'FormController@form_first');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::post('/form/second', 'FormController@form_second');
+Route::get('/form/first', 'FormController@form_first')->middleware('auth');
 
-Route::post('/form/third', 'FormController@form_third');
+Route::post('/form/second', 'FormController@form_second')->middleware('auth');
 
-Route::post('/form/forth', 'FormController@form_forth');
+Route::post('/form/third', 'FormController@form_third')->middleware('auth');
 
-Route::get('/form/result', 'FormController@form_result');
+Route::post('/form/forth', 'FormController@form_forth')->middleware('auth');
+
+Route::get('/form/result', 'FormController@form_result')->middleware('auth');
+
+Route::get('/logout', 'FormController@user_logout');
 
 
