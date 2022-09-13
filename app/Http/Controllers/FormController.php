@@ -66,7 +66,7 @@ class FormController extends Controller
 		$to = [
 	    	[
 	        	'email' => $user_email, 
-	        	'name' => 'Test',
+	        	'name' => '株式会社メディアブレイン',
 	    	]
 		];
         
@@ -76,5 +76,9 @@ class FormController extends Controller
     }
     public function form_result(){
         return view('form/result');
+    }
+    public function user_logout(){
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

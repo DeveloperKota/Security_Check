@@ -29,11 +29,11 @@ class SendTestMail extends Mailable
      */
     public function build()
     {
-        //$score = Security::latest()->first()->score;
+        $score = Security::latest()->first()->score;
         
         
-        return $this->view('emails.test')
-                ->from('photokotasato020@gmail.com','Test')
-                ->subject("今回のセキュリティチェックの結果");
+        return $this->view('emails.test',compact('score'))
+                ->from('photokotasato020@gmail.com','株式会社メディアブレイン')
+                ->subject("セキュリティチェックリストの結果");
     }
 }
