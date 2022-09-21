@@ -58,7 +58,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a href="{{ route('password.request') }}">
+                                    <a href="{{ route('password.request') }}" class="password_reset">
                                         パスワードをお忘れですか？
                                     </a>
                                 @endif
@@ -67,7 +67,6 @@
                     </form>
                 </div>
             </div>
-            <a href="register" class="register" alt="登録画面へ">まだ登録してない方は<strong>こちら</strong>から</a>
         </div>
     </div>
 </div>
