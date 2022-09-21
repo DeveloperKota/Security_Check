@@ -33,6 +33,11 @@ class LoginController extends Controller
      *
      * @return void
      */
+    protected function validator(array $data)
+    {
+        // バリデーションルールとエラーメッセージは、
+        return Validator::make($data, User::$rules, User::$messages);
+    }
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

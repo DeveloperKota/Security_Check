@@ -84,7 +84,6 @@
                     </form>
                 </div>
             </div>
-            <a href="login">ログイン画面へ戻る</a>
         </div>
     </div>
 </div>

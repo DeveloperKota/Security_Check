@@ -23,7 +23,7 @@
                     @endfor
                     </table>--}}
                     <p></p>
-                   <a href ="/">ホームに戻る</a>
+                   <a href ="/home">ホームに戻る</a>
                 </div>
             </div>
         </div>
