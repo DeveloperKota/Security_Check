@@ -46,6 +46,7 @@
         }
         .form-group {
             display: flex;
+            font-size: 1.2rem !important;
         }
         .label {
             margin-left: 5%;
