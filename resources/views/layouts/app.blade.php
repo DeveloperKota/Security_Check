@@ -126,7 +126,9 @@
             }
 
             .content img {
-                margin-bottom: 100px;
+                width: 16rem;
+                height: 14rem;
+                margin-bottom: 5rem;
             }
             .title {
                 font-size: 84px;

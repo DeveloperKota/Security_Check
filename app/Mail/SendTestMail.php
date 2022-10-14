@@ -32,7 +32,7 @@ class SendTestMail extends Mailable
         $score = Security::latest()->first()->score;
         
         
-        return $this->view('emails.test',compact('score'))
+        return $this->view('emails.mail',compact('score'))
                 ->from('photokotasato020@gmail.com','株式会社メディアブレイン')
                 ->subject("セキュリティチェックリストの結果");
     }

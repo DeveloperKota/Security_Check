@@ -16,7 +16,7 @@
                         </div>
                         <div class="label">
                             <label for="question_6">⑥電子メールの添付ファイルや本文中のURLリンクを介したウイルスに気を付けていますか？</label>
-                        </div>⑥6
+                        </div>
                     </div>
                     <div class="form-group">
                         <div class="input">
